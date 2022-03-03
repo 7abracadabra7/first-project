@@ -7,19 +7,32 @@ html {
 ul {
     list-style: none;
 }
+h2 {
+    display: inline;
+    background-color: var(--color-primary-500);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-family: 'Scheherazade New', serif;
+}
+div {
+    margin: 1rem 1rem;
+
+}
 main {
     width: 80%;
     border-radius: 6px;
     box-shadow: 0 2px 2px rgba(61, 61, 61, 0.2);
     margin: 0 auto;
     background-color: white;
+    text-align: right;
+    font-family: 'Noto Sans Arabic', sans-serif;
 }
 #personal-infos {
     background-color: var(--color-primary-500);
     text-align: right;
     display: flex ;
     flex-direction: row-reverse;
-    position: relative;
+    /* position: relative; */
 }
 
 #personal-infos img {
@@ -32,9 +45,9 @@ main {
 #personal-infos ul {
     width: 20%;
     margin-top: 5%;
-    position: absolute;
+    /* position: absolute;
     bottom: 1.5rem;
-    right: 15rem;
+    right: 15rem; */
 
 }
 
