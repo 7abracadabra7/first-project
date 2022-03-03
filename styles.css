@@ -3,13 +3,15 @@ html {
 --color-grey-100: rgb(228, 228, 228);
 --color-grey-400: rgb(144, 144, 144);
 --color-grey-900:rgb(61, 61, 61);
+background-color: var(--color-grey-100);
 }
 ul {
     list-style: none;
 }
 h2 {
-    display: inline;
-    background-color: var(--color-primary-500);
+    /* display: inline; */
+    color: var(--color-primary-500);
+    background-color: var(--color-grey-400);
     padding: 5px 15px;
     border-radius: 5px;
     font-family: 'Scheherazade New', serif;
@@ -28,11 +30,15 @@ main {
     font-family: 'Noto Sans Arabic', sans-serif;
 }
 #personal-infos {
+    font-family: 'Scheherazade New', serif;
     background-color: var(--color-primary-500);
     text-align: right;
     display: flex ;
     flex-direction: row-reverse;
     /* position: relative; */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 #personal-infos img {
@@ -54,4 +60,8 @@ main {
 #personal-infos ul li {
     padding: 5%;
 
+}
+
+.grade {
+    color: var(--color-grey-400);
 }
