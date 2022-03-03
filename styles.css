@@ -1,5 +1,5 @@
 html {
---color-primary-500:rgb(234, 221, 33);
+--color-primary-500:rgb(234, 197, 33);
 --color-grey-100: rgb(228, 228, 228);
 --color-grey-400: rgb(144, 144, 144);
 --color-grey-900:rgb(61, 61, 61);
@@ -28,8 +28,11 @@ main {
     background-color: white;
     text-align: right;
     font-family: 'Noto Sans Arabic', sans-serif;
+    overflow:hidden ;
+ 
 }
 #personal-infos {
+ 
     font-family: 'Scheherazade New', serif;
     background-color: var(--color-primary-500);
     text-align: right;
@@ -64,4 +67,11 @@ main {
 
 .grade {
     color: var(--color-grey-400);
+}
+footer {
+    background-color: var(--color-primary-500);
+    padding:0.5rem;
+    text-align: center;
+    font-weight: 600;
+    box-sizing: border-box;
 }
