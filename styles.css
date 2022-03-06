@@ -1,5 +1,6 @@
 html {
---color-primary-500:rgb(234, 197, 33);
+--color-primary-700:rgb(172, 158, 37);
+--color-primary-500:rgb(197, 161, 0);
 --color-grey-100: rgb(228, 228, 228);
 --color-grey-400: rgb(144, 144, 144);
 --color-grey-900:rgb(61, 61, 61);
@@ -8,12 +9,15 @@ background-color: var(--color-grey-100);
 ul {
     list-style: none;
 }
-h2 {
-    /* display: inline; */
+.headline {
     color: var(--color-primary-500);
     background-color: var(--color-grey-400);
     padding: 5px 15px;
     border-radius: 5px;
+}
+h2 {
+    /* display: inline; */
+
     font-family: 'Scheherazade New', serif;
 }
 div {
@@ -54,9 +58,7 @@ main {
 #personal-infos ul {
     width: 20%;
     margin-top: 5%;
-    /* position: absolute;
-    bottom: 1.5rem;
-    right: 15rem; */
+
 
 }
 
@@ -65,6 +67,46 @@ main {
 
 }
 
+#skills ul {
+    display: grid;
+    grid-template-columns: 80% 20%;
+   
+ 
+    
+}
+#skills ul li {
+    text-align: right;
+}
+.skill-p {
+    margin: 0 0 0 auto;
+    height: 50%;
+    border: 1px solid black;
+    width: 20%;
+}
+#one {
+    margin: 0;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-primary-700);
+}
+#two {
+    margin: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-primary-700);
+}
+#three {
+    margin: 0;
+    width: 90%;
+    height: 100%;
+    background-color:var(--color-primary-700);
+}
+#four {
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    background-color: var(--color-primary-700);
+}
 .grade {
     color: var(--color-grey-400);
 }
