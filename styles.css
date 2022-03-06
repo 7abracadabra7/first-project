@@ -1,6 +1,7 @@
 html {
 --color-primary-700:rgb(172, 158, 37);
 --color-primary-500:rgb(197, 161, 0);
+--color-primary-300:rgb(228, 224, 25);
 --color-grey-100: rgb(228, 228, 228);
 --color-grey-400: rgb(144, 144, 144);
 --color-grey-900:rgb(61, 61, 61);
@@ -14,7 +15,7 @@ ul {
     justify-content:flex-end;
     align-items: center;
     margin: 0;
-    color: var(--color-primary-500);
+    color: var(--color-primary-300);
     background-color: var(--color-grey-400);
     padding: 5px 15px;
     border-radius: 5px;
