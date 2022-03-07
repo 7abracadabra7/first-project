@@ -65,7 +65,8 @@ main {
 
 #personal-infos ul {
     width: 20%;
-    margin-top: 5%;
+    margin: 0;
+    padding: 2%;
 
 
 }
