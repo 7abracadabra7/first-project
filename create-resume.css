@@ -1,0 +1,50 @@
+html {
+    --color-primary-700:rgb(172, 158, 37);
+    --color-primary-600:rgb(197, 135, 0);
+    --color-primary-500:rgb(197, 161, 0);
+    --color-primary-300:rgb(228, 224, 25);
+    --color-grey-100: rgb(228, 228, 228);
+    --color-grey-400: rgb(144, 144, 144);
+    --color-grey-900:rgb(61, 61, 61);
+    --color-grey-1000:rgb(35,35,35);
+}
+
+.skill-card{
+    text-align: center;
+    width: 40%;
+    background-color: var(--color-primary-500);
+    /* padding: 2rem; */
+    margin: 6rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    
+    
+}
+
+#new-form {
+    padding: 2rem 0;
+}
+
+
+#new-form label{
+    display:block;
+    padding: 0.5rem 2rem;
+}
+#new-form input {
+    width: 40%;
+ font-family: inherit;
+ border-radius: 6px;
+ 
+}
+/* #show-result {
+    width: 50%;
+    margin-left: 20%;
+} */
+
+
+#skill-section {
+    display: flex;
+    justify-content: space-between;
+    align-items:initial;
+
+}
