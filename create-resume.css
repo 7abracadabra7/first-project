@@ -48,8 +48,8 @@ text-align: center;
 
 .next-step {
     margin: 0.5rem;
-    padding: 0.1rem 0.5rem;
-    width: 10%;
+    padding: 0.2rem 0.5rem;
+    width: 7%;
 
 }
 .next-step svg {
@@ -59,6 +59,7 @@ text-align: center;
 
 button svg {
     width: 2rem;
+    color: var(--color-primary-500);
 }
 
 
@@ -76,6 +77,7 @@ margin: 0 auto;
 
 #new-form input:focus {
     outline: 0;
+    border: 2px solid var(--color-primary-500);
 }
 
 
@@ -99,17 +101,22 @@ margin: 0 auto;
     height: 100%;
 }
 
-#confirm-skill-btn {
-    width: 30%;
-    height: 2rem;
-    margin: 1rem 0;
-    font-family: inherit;
+.btn {
     font-weight: 600;
     border-radius: 4px;
     background: #e6e0e0;
     box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
     cursor: pointer;
-    border-color: transparent;
+    border-color: transparent; 
+}
+
+#confirm-skill-btn {
+    width: 30%;
+    height: 2rem;
+    margin: 1rem 0;
+    font-family: inherit;
+
+
 }
 
 /* #confirm-skill-btn:hover {
