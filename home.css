@@ -1,5 +1,6 @@
 html {
     --color-primary-700:rgb(172, 158, 37);
+    --color-primary-650:rgb(179, 125, 10);
     --color-primary-600:rgb(197, 135, 0);
     --color-primary-500:rgb(197, 161, 0);
     --color-primary-300:rgb(228, 224, 25);
@@ -59,3 +60,16 @@ html {
         border: 1px transparent solid;
         box-shadow: 0px 2px 8px rgba(35,35,35,0.5);
     }
+
+#create-resume:hover {
+    background-color:var(--color-primary-650) ;
+    color: var(--color-primary-300);
+}
+
+a {
+        text-decoration: none;
+        color: var(--color-grey-1000);
+ }
+a:hover {
+    color: var(--color-primary-300);
+}

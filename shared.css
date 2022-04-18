@@ -3,11 +3,11 @@ html {
     --color-primary-600:rgb(197, 135, 0);
     --color-primary-500:rgb(197, 161, 0);
     --color-primary-300:rgb(228, 224, 25);
-    --color-grey-100: rgb(228, 228, 228);
+    --color-grey-100: #e6e0e0;
     --color-grey-400: rgb(144, 144, 144);
     --color-grey-900:rgb(61, 61, 61);
     --color-grey-1000:rgb(35,35,35);
-    background-color: var(--color-grey-400);
+    background-color: var(--color-grey-100);
    /* linear-gradient(150deg,var(--color-grey-100) ,var(--color-grey-400)); */
     color: var(--color-grey-1000);
     font-family: 'Scheherazade New', serif;
