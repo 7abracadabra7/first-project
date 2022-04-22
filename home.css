@@ -12,7 +12,7 @@ html {
     }
 
     body {
-        background-color: var(--color-grey-400);
+        background-color: var(--color-grey-100);
     }
 
     #home-image {
@@ -38,7 +38,7 @@ html {
         text-align: right;
         padding-right:20%;
         /* margin-top: 10%; */
-        color: var(--color-primary-300);
+        color: var(--color-primary-500);
         font-family: inherit;
     }
     #right-section h1 {
