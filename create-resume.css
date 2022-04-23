@@ -95,10 +95,20 @@ margin: 0 auto;
 
 
 #skill-list {
-    list-style-type: disc;
+    /* list-style-type: disc; */
     text-align: right;
     width: auto;
     height: 100%;
+}
+#number {
+    background-color: var(--color-primary-500);
+    text-align: center;
+    width: 10%;
+}
+
+#result-modal {
+    display: flex;
+    
 }
 
 .btn {
