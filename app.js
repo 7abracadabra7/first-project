@@ -21,18 +21,25 @@ function addSkill(){
         clearField();
 
     }
+    
 }
 
-function showResult() {
+function getProgressAmount(){
     const progressArray = document.querySelectorAll('input[name="skill-input-percent"]');
-    console.log(progressArray);
-    let progressAmount; 
+    let progressValue; 
     for(const progress of progressArray){
         if(progress.checked){
-            progressAmount = progress.value;
+            progressValue = progress.value;
             break;
         }
     }
+    return progressValue;
+}
+
+function showResult() {
+    const progressAmount = getProgressAmount();
+    const deleteBtn = document.getElementById("delete-svg");
+    const editBtn = document.getElementById("edit-svg");
     const newSkill = document.createElement("div");
     newSkill.id = "result-modal";
     newSkill.innerHTML = `
@@ -61,6 +68,12 @@ function showResult() {
     // newLi.textContent = `${userInput.value}`;
     skillList.appendChild(newSkill);
     skillCounter++;
+    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,id));
+    editBtn.addEventListener("click", editSkillHandler.bind(null,id));
+}
+
+function deleteSkillHandler(skillId){
+
 }
 
 function clearField(){
