@@ -144,6 +144,7 @@ progress {
 #edit-box svg {
     width: 2rem;
     padding-top: 20%;
+    cursor: pointer;
 
 }
 
