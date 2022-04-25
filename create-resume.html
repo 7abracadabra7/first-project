@@ -68,23 +68,23 @@
         <div id="skill-section" >
             <div id="show-result" class="skill-card">
                 <h1>مهارت های شما</h1>
-                <ul id="skill-list">
+                <div id="skill-list">
                     
-                </ul>
+                </div>
             </div>
     
             <div id="new-form" class="skill-card">
-                <label for="skill-input">مهارت خود را اضافه کنید</label>
+                <label class="hdr" for="skill-input">مهارت خود را اضافه کنید:</label>
                 <input type="text" id="skill-input" name="skill-input"><br>
-                <label>:میزان مهارت خود را تعیین کنید</label><br>
-                <label for="skill-input-percent">کم</label>
-                <input type="radio" class="skill-input-percent" name="skill-input-percent" value="low">
-                <label for="skill-input-percent">متوسط</label>
-                <input type="radio" class="skill-input-percent" name="skill-input-percent" value="good">
-                <label for="skill-input-percent">زیاد</label>
-                <input type="radio" class="skill-input-percent" name="skill-input-percent" value="very-good">
-                <label for="skill-input-percent">بسیار زیاد</label>
-                <input type="radio" class="skill-input-percent" name="skill-input-percent" value="great"><br>
+                <label class="hdr">میزان مهارت خود را تعیین کنید:</label><br>
+                <label for="low-value">کم</label>
+                <input type="radio" id="low-value" class="skill-input-percent" name="skill-input-percent" value="25">
+                <label for="good-value">متوسط</label>
+                <input type="radio" class="skill-input-percent" id="good-value" name="skill-input-percent" value="50">
+                <label for="very-good-value">زیاد</label>
+                <input type="radio" class="skill-input-percent" id="very-good-value"  name="skill-input-percent" value="75">
+                <label for="great-value">بسیار زیاد</label>
+                <input type="radio" class="skill-input-percent" id="great-value" name="skill-input-percent" value="100"><br>
                 <button class="btn" id="confirm-skill-btn">اضافه کردن</button>
             </div>
 
