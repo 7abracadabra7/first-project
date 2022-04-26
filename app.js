@@ -1,5 +1,5 @@
   
-    let skillsArray = [];
+    // let skillsArray = [];
     let counter = 0;
     let skillCounter = 1;
     const addSkillBtn = document.getElementById("confirm-skill-btn");
@@ -9,7 +9,7 @@
     const skillFinalArray = [];
 
     function deleteSkillHandler(skillId){
-        console.log("delete function");
+        console.log("the id you want to delete is: ", skillId);
         let number=0;
         for(const index of skillFinalArray){
             if(index.id == skillId){
@@ -20,6 +20,7 @@
         }
         skillFinalArray.splice(number,1);
         skillList.children[number].remove();
+        console.log(`the ${number} file deleted`);
       
     
     }
@@ -27,32 +28,40 @@
 
 function addSkill(){
 
-    const editBtn = document.getElementById("edit-svg");
+    // const editBtn = document.getElementById("edit-svg");
     const usrInput = userInput.value;
-    if(usrInput.trim() === ''){
-        alert("please put an invalid value");
-    }
-    else{
-        skillsArray.push(usrInput);
-        showResult();
-        clearField();
-    }
     const skillValue = getProgressAmount();
+    console.log("skill value is: ", skillValue);
+    if(usrInput.trim() === ''){
+        alert("لطفا فیلد مربوط به مهارت را پر کنید");
+    }
+    else if (skillValue == '') 
+    {
+        alert("لطفا میزان مهارت خود را انتخاب نمایید");    
+    }
     const newSkill = {
         id: Math.random().toString(),
         title: usrInput,
         skillValue: skillValue
     };
+    
+        // skillsArray.push(usrInput);
+        showResult();
+        clearField();
+    
     skillFinalArray.push(newSkill);
     const deleteBtn = document.getElementById("delete-svg");
+    console.log("the id is: ", newSkill.id);
+
     deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,newSkill.id));
     // editBtn.addEventListener("click", editSkillHandler.bind(null,id));  
 }
 
 
 function getProgressAmount(){
+
     const progressArray = document.querySelectorAll('input[name="skill-input-percent"]');
-    let progressValue; 
+    let progressValue =''; 
     for(const progress of progressArray){
         if(progress.checked){
             progressValue = progress.value;
@@ -98,7 +107,7 @@ function showResult() {
 
 
 function clearField(){
-for(const index of skillsArray){
+for(const index of skillFinalArray){
     if(index.length != 0){
         userInput.value = "";
     }
