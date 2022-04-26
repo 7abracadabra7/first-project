@@ -6,11 +6,28 @@
     const userInput = document.getElementById("skill-input");
     const skillList = document.getElementById("skill-list");
     const nextStepBtn = document.getElementsByClassName("next-step");
+    const skillFinalArray = [];
 
+    function deleteSkillHandler(skillId){
+        console.log("delete function");
+        let number=0;
+        for(const index of skillFinalArray){
+            if(index.id == skillId){
+    
+                break;
+            }
+        number++;
+        }
+        skillFinalArray.splice(number,1);
+        skillList.children[number].remove();
+      
+    
+    }
 
 
 function addSkill(){
-    
+
+    const editBtn = document.getElementById("edit-svg");
     const usrInput = userInput.value;
     if(usrInput.trim() === ''){
         alert("please put an invalid value");
@@ -19,10 +36,19 @@ function addSkill(){
         skillsArray.push(usrInput);
         showResult();
         clearField();
-
     }
-    
+    const skillValue = getProgressAmount();
+    const newSkill = {
+        id: Math.random().toString(),
+        title: usrInput,
+        skillValue: skillValue
+    };
+    skillFinalArray.push(newSkill);
+    const deleteBtn = document.getElementById("delete-svg");
+    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,newSkill.id));
+    // editBtn.addEventListener("click", editSkillHandler.bind(null,id));  
 }
+
 
 function getProgressAmount(){
     const progressArray = document.querySelectorAll('input[name="skill-input-percent"]');
@@ -38,8 +64,6 @@ function getProgressAmount(){
 
 function showResult() {
     const progressAmount = getProgressAmount();
-    const deleteBtn = document.getElementById("delete-svg");
-    const editBtn = document.getElementById("edit-svg");
     const newSkill = document.createElement("div");
     newSkill.id = "result-modal";
     newSkill.innerHTML = `
@@ -56,7 +80,7 @@ function showResult() {
          </div>
 
          <div id="edit-box">
-         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="edit-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <svg xmlns="http://www.w3.org/2000/svg"  class="h-6 w-6" id="edit-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
          </svg>
 
@@ -68,13 +92,10 @@ function showResult() {
     // newLi.textContent = `${userInput.value}`;
     skillList.appendChild(newSkill);
     skillCounter++;
-    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,id));
-    editBtn.addEventListener("click", editSkillHandler.bind(null,id));
+ 
 }
 
-function deleteSkillHandler(skillId){
 
-}
 
 function clearField(){
 for(const index of skillsArray){
