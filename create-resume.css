@@ -9,6 +9,27 @@ html {
     --color-grey-1000:rgb(35,35,35);
 }
 
+#main-part {
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+#fill-info-menu {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 6rem; */
+    background-color: var(--color-primary-500);
+    padding: 0.5rem 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.menu-section {
+    width: 25%;
+    text-align: center;
+    border-right: 1px solid black;
+    cursor: pointer;
+}
+
 #show-result{
     text-align: center;
     width: 40%;
