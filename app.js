@@ -9,7 +9,7 @@
     const skillFinalArray = [];
 
     function deleteSkillHandler(skillId){
-        console.log("the id you want to delete is: ", skillId);
+        // console.log("the id you want to delete is: ", skillId);
         let number=0;
         for(const index of skillFinalArray){
             if(index.id == skillId){
@@ -44,20 +44,21 @@ function addSkill(){
         title: usrInput,
         skillValue: skillValue
     };
-    
-        // skillsArray.push(usrInput);
-        showResult();
-        clearField();
-    
+   
+       
+    clearField();
     skillFinalArray.push(newSkill);
-    const deleteBtn = document.getElementById("delete-svg");
-    console.log("the id is: ", newSkill.id);
-
-    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,newSkill.id));
+    renderNewSkill(newSkill.id, newSkill.title, newSkill.skillValue);
+    // const deleteBtn = document.getElementById("delete-svg");
+    // deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,newSkill.id));
     // editBtn.addEventListener("click", editSkillHandler.bind(null,id));  
 }
 
-
+function renderNewSkill(id, title){
+    showResult(title);
+    const deleteBtn = document.getElementById("delete-svg");
+    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,id));
+}
 function getProgressAmount(){
 
     const progressArray = document.querySelectorAll('input[name="skill-input-percent"]');
@@ -71,7 +72,7 @@ function getProgressAmount(){
     return progressValue;
 }
 
-function showResult() {
+function showResult(title) {
     const progressAmount = getProgressAmount();
     const newSkill = document.createElement("div");
     newSkill.id = "result-modal";
@@ -81,7 +82,7 @@ function showResult() {
          </div>
          <div id="each-result">
          <div id="result-content">
-            ${userInput.value}
+            ${title}
          </div>
          <div id="result-progress">
          <progress value= ${progressAmount} max="100">
@@ -107,6 +108,7 @@ function showResult() {
 
 
 function clearField(){
+ 
 for(const index of skillFinalArray){
     if(index.length != 0){
         userInput.value = "";
