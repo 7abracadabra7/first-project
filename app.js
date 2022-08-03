@@ -7,6 +7,7 @@
     const skillList = document.getElementById("skill-list");
     const nextStepBtn = document.getElementsByClassName("next-step");
     const skillFinalArray = [];
+    let formContent = document.getElementsByClassName("form__content");
 
     function deleteSkillHandler(skillId){
         // console.log("the id you want to delete is: ", skillId);
@@ -120,5 +121,12 @@ function goToNextStep(){
     const label = document.getElementById("input-label");
 
 }
-addSkillBtn.addEventListener("click", addSkill);
-// nextStepBtn.addEventListener("click", goToNextStep);
+addSkillBtn.addEventListener("click", e => {
+    e.preventDefault();
+    addSkill();
+});
+console.log(formContent);
+// formContent.addEventListener("submit", e => {
+//     e.preventDefault();
+//     addSkill();
+// });

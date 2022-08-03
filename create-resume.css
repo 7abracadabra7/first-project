@@ -1,3 +1,6 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
 html {
     --color-primary-700:rgb(172, 158, 37);
     --color-primary-600:rgb(197, 135, 0);
@@ -7,11 +10,30 @@ html {
     --color-grey-400: rgb(144, 144, 144);
     --color-grey-900:rgb(61, 61, 61);
     --color-grey-1000:rgb(35,35,35);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-grey-100);
 }
 
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+    :root {
+      --normal-font-size: 1rem;
+    }
+  }
+
+  .page-container {
+    background-color: var(--color-grey-100);
+  }
+
 #main-part {
+    width: 90%;
     box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
+    /* background-color: var(--color-grey-100); */
+    margin: 0 auto;
+   
 }
 
 #fill-info-menu {
@@ -28,39 +50,145 @@ html {
     text-align: center;
     border-right: 1px solid black;
     cursor: pointer;
+    
+}
+
+
+
+.form {
+    /* height: 30vh; */
+    display: grid;
+    place-items: center;
+    /* margin: 0 4rem; */
+  }
+
+  .skill-card {
+    width: 40%;
+    height: 20rem;
+    border-radius: 8px;
+    margin: 3rem;
+    border-right: 6px solid var(--color-primary-500);
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    direction: rtl;
 }
 
 #show-result{
     text-align: center;
-    width: 40%;
-    margin: 6rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    direction: rtl;
+    direction: rtl;  
+}
+  
+  .form__content {
+    display: grid;
+    row-gap: .5rem;
+  }
+
+  .form__box {
+    width: 312px;
+    height: 59px;
+    position: relative;
+ 
     
-    
+  }
+  .form__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
-#new-form {
-    padding: 2rem 0;
-    text-align: center;
-    width: 40%;
-    background-color: #e6e0e0;
-    height: 15rem;
-    margin: 6rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    direction: rtl;
+.form__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    padding: 18px;
+    border-color: transparent;
+    transition: transform .5s;
+    border-right-color: var(--color-primary-500);
+    border-right-width: 5px;
+    /* border-radius: 5px; */
+
+}
+
+.form__label {
+    z-index: 100;
+    position: absolute;
+    font-size:x-small;
+    top: -5px;
+    right: 20px;  
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form__input:focus + .form__label , .form__input:not(:placeholder-shown) + .form__label {
+    opacity: 1;
+    transform: translate(1px, 1px);
+  
+}
+
+.form__input:focus::placeholder {
+    opacity: 0;
+}
+
+.form__input:focus,
+.form__input:not(:placeholder-shown).form__input:not(:focus)
+{
+    border-right-width: 0;
+    padding: 28px 18px 18px;
+    transform: translate(-10px, -10px);
+    animation: input-animation .5s;
+}
+
+@keyframes input-animation {
+0% {
+    transform: translate(0);
+}
+40% {
+    transform: translate(-12px, -12px);
+}
+60% {
+    transform: translate(-9px, -9px);
+}
 
 
 }
 
+.skill-number {
+    margin-bottom: 0.7rem;
+}
 
+.form__button {
+    justify-self: flex-start;
+    background-color: black;
+    width: 100px;
+    /* padding: 0 10px; */
+    border-radius: 6px;
+}
+
+.form__submit {
+    width: 100%;
+    padding: 10px 15px;
+    transition: transform;
+    background: #e6e0e0;
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    border-color: transparent;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+.form__submit:hover {
+    transform: translate(-5px, -5px);
+}
+    
 
 
 #pre-next-step {
-margin: 1rem auto;
+/* margin: 1rem auto; */
+padding: 1rem 0;
 text-align: center;
+/* background-color: var(--color-grey-100); */
 }
 
 .next-step {
@@ -80,21 +208,17 @@ button svg {
 }
 
 
-#skill-input {
-width: 40%;
-margin: 0 auto;
- font-family: inherit;
- border-radius: 6px;
- display: block;
- border: none;
- border-right: 4px solid var(--color-primary-500);
- direction: rtl;   
- 
+.form__box {
+    width: 312px;
+    height: 59px;
+    position: relative;
 }
 
-#new-form input:focus {
-    outline: 0;
-    border: 2px solid var(--color-primary-500);
+.form__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
 
@@ -102,13 +226,9 @@ margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items:initial;
-
-
+  
 }
-.skill-card {
-    border-right: 6px solid var(--color-primary-500);
-    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
-}
+
 
 
 #skill-list {
@@ -179,14 +299,6 @@ progress {
 
 }
 
-#confirm-skill-btn {
-    width: 30%;
-    height: 2rem;
-    margin: 2rem 0;
-    font-family: inherit;
-
-
-}
 
 /* #confirm-skill-btn:hover {
     background-color: var(--color-primary-600);
