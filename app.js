@@ -7,12 +7,14 @@
     const skillList = document.getElementById("skill-list");
     const nextStepBtn = document.getElementsByClassName("next-step");
     const skillFinalArray = [];
+    const deleteBtns = [];
     let formContent = document.getElementsByClassName("form__content");
 
-    function deleteSkillHandler(skillId){
-        // console.log("the id you want to delete is: ", skillId);
+    function deleteSkillHandler(skillCounter,skillId){
+        console.log("the id you want to delete is: ", skillId);
         let number=0;
         for(const index of skillFinalArray){
+            console.log("ith id: ", index.id);
             if(index.id == skillId){
     
                 break;
@@ -32,7 +34,7 @@ function addSkill(){
     // const editBtn = document.getElementById("edit-svg");
     const usrInput = userInput.value;
     const skillValue = getProgressAmount();
-    console.log("skill value is: ", skillValue);
+    // console.log("skill value is: ", skillValue);
     if(usrInput.trim() === ''){
         alert("لطفا فیلد مربوط به مهارت را پر کنید");
     }
@@ -41,24 +43,32 @@ function addSkill(){
         alert("لطفا میزان مهارت خود را انتخاب نمایید");    
     }
     const newSkill = {
+        skillCounter: skillCounter,
         id: Math.random().toString(),
         title: usrInput,
         skillValue: skillValue
     };
    
-       
+    console.log("new obj is created: ", newSkill);  
     clearField();
     skillFinalArray.push(newSkill);
-    renderNewSkill(newSkill.id, newSkill.title, newSkill.skillValue);
+    renderNewSkill(newSkill.id, newSkill.title, newSkill.skillCounter);
     // const deleteBtn = document.getElementById("delete-svg");
     // deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,newSkill.id));
     // editBtn.addEventListener("click", editSkillHandler.bind(null,id));  
 }
 
-function renderNewSkill(id, title){
+function renderNewSkill(id, title, skillCounter){
     showResult(title);
-    const deleteBtn = document.getElementById("delete-svg");
-    deleteBtn.addEventListener("click", deleteSkillHandler.bind(null,id));
+    const deleteBtn = document.querySelector(`#d${skillCounter}`);
+    deleteBtns.push(deleteBtn);
+    console.log(deleteBtns);
+    deleteBtns.forEach(dltBtn => {
+        dltBtn.addEventListener("click", alert("hello"));  
+        return;
+    });
+
+ 
 }
 function getProgressAmount(){
 
@@ -95,7 +105,7 @@ function showResult(title) {
          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
          </svg>
 
-         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="delete-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="d${skillCounter}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
          <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
          </svg>
          </div>
@@ -125,8 +135,4 @@ addSkillBtn.addEventListener("click", e => {
     e.preventDefault();
     addSkill();
 });
-console.log(formContent);
-// formContent.addEventListener("submit", e => {
-//     e.preventDefault();
-//     addSkill();
-// });
+
